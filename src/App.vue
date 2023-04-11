@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {zhCn} from "element-plus/lib/locale/index"
-import {Document, Location, Menu, Setting} from "@element-plus/icons-vue"
+import {Avatar, Bell, CreditCard, House, Monitor, OfficeBuilding, Setting, Shop, User} from "@element-plus/icons-vue"
 </script>
 
 <template>
@@ -9,48 +9,68 @@ import {Document, Location, Menu, Setting} from "@element-plus/icons-vue"
             <div class="flex-none flex justify-between">
                 <div class="text-4xl">Logo</div>
                 <div class="text-4xl">Title</div>
-                <div class="text-4xl">Avatar</div>
+                <div class="text-4xl flex gap-4">
+                    <el-icon size="32px">
+                        <Bell/>
+                    </el-icon>
+                    Avatar
+                </div>
             </div>
             <div class="flex-auto flex gap-2">
                 <div class="flex-initial">
-                    <el-menu class="h-full" default-active="2">
-                        <el-sub-menu index="1">
+                    <el-menu class="h-full" :router="true" default-active="/dashboard">
+                        <el-menu-item index="/dashboard">
+                            <el-icon>
+                                <Monitor/>
+                            </el-icon>
+                            <span>仪表盘</span>
+                        </el-menu-item>
+                        <el-menu-item index="/accounts">
+                            <el-icon>
+                                <User/>
+                            </el-icon>
+                            <span>账户管理</span>
+                        </el-menu-item>
+                        <el-sub-menu index="/shops">
                             <template #title>
                                 <el-icon>
-                                    <location/>
+                                    <Shop/>
                                 </el-icon>
-                                <span>Navigator One</span>
+                                <span>商铺管理</span>
                             </template>
-                            <el-menu-item-group title="Group One">
-                                <el-menu-item index="1-1">item one</el-menu-item>
-                                <el-menu-item index="1-2">item two</el-menu-item>
-                            </el-menu-item-group>
-                            <el-menu-item-group title="Group Two">
-                                <el-menu-item index="1-3">item three</el-menu-item>
-                            </el-menu-item-group>
-                            <el-sub-menu index="1-4">
-                                <template #title>item four</template>
-                                <el-menu-item index="1-4-1">item one</el-menu-item>
-                            </el-sub-menu>
+                            <el-menu-item index="/companies">
+                                <el-icon>
+                                    <OfficeBuilding/>
+                                </el-icon>
+                                <span>企业管理</span>
+                            </el-menu-item>
+                            <el-menu-item index="/shops">
+                                <el-icon>
+                                    <House/>
+                                </el-icon>
+                                <span>商铺管理</span>
+                            </el-menu-item>
+                            <el-menu-item index="/shops/accounts">
+                                <el-icon>
+                                    <CreditCard/>
+                                </el-icon>
+                                <span>会员管理</span>
+                            </el-menu-item>
                         </el-sub-menu>
-                        <el-menu-item index="2">
-                            <el-icon>
-                                <Menu/>
-                            </el-icon>
-                            <span>Navigator Two</span>
-                        </el-menu-item>
-                        <el-menu-item index="3" disabled>
-                            <el-icon>
-                                <document/>
-                            </el-icon>
-                            <span>Navigator Three</span>
-                        </el-menu-item>
-                        <el-menu-item index="4">
-                            <el-icon>
-                                <setting/>
-                            </el-icon>
-                            <span>Navigator Four</span>
-                        </el-menu-item>
+                        <el-sub-menu index="/settings">
+                            <template #title>
+                                <el-icon>
+                                    <Setting/>
+                                </el-icon>
+                                <span>更多</span>
+                            </template>
+                            <el-menu-item index="roles">
+                                <el-icon>
+                                    <Avatar/>
+                                </el-icon>
+                                <span>角色管理</span>
+                            </el-menu-item>
+                        </el-sub-menu>
                     </el-menu>
                 </div>
                 <div class="flex-auto p-4">
