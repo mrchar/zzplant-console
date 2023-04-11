@@ -1,10 +1,12 @@
 <script setup lang="ts">
-const count = ref(1)
 </script>
 
 <template>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
-    <el-button @click="count++">{{ count }}</el-button>
+    <div class="w-screen h-screen flex flex-col gap-2">
+        <div class="flex-none">Header</div>
+        <div class="flex-auto flex gap-2">
+            <div class="flex-initial">Aside</div>
+            <div class="flex-auto">Main</div>
+        </div>
+    </div>
 </template>
