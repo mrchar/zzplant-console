@@ -53,7 +53,9 @@ import {Document, Location, Menu, Setting} from "@element-plus/icons-vue"
                         </el-menu-item>
                     </el-menu>
                 </div>
-                <div class="flex-auto p-4">Main</div>
+                <div class="flex-auto p-4">
+                    <router-view/>
+                </div>
             </div>
         </div>
     </el-config-provider>
